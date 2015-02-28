@@ -33,9 +33,28 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Auth
+
+gem 'devise'
+gem 'omniauth'
+gem 'cancan'
+
+# HTML processors
+gem 'haml'
+gem 'haml-rails'
+
+# Forms
+gem 'simple_form'
+
+# Semantic-ui-sass
+gem 'semantic-ui-sass'#, '~> 0.19.3.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Awesome print
+  gem 'awesome_print'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -44,3 +63,12 @@ group :development, :test do
   gem 'spring'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'guard-cucumber'
+  gem 'capybara'
+  gem 'spork', '~> 1.0rc'
+end

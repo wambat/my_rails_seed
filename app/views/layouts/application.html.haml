@@ -1,0 +1,31 @@
+!!! 5
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js(lang = "en" )
+  <!--<![endif]-->
+  %head
+    %meta{ :charset => "utf-8" }/
+    != csrf_meta_tag
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}/
+    %title Hero control 
+    %meta{name:"google-site-verification", content:"REPLACE_ME"}
+    = stylesheet_link_tag "frontend", :media => 'all'
+    =#%meta{:content=>"width=device-width, initial-scale=1.0", :name=>"viewport"}/
+    =# javascript_include_tag 'modernizr'
+    = javascript_include_tag 'frontend'
+    /[if lt IE 9]
+      = javascript_include_tag "http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"
+  %body
+    %nav.ui.menu
+      %h3.header.item Welcome to my new shiny website
+      - unless current_user
+        %a.item.right{href: admin_root_path} Login
+      - else
+        = link_to t('global.sign_out'), destroy_user_session_path, method: :delete, class: "item right"
+    -flash.each do |name, msg|
+      .ui.info.message
+        .header= name
+        = msg
+    = yield 
