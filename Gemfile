@@ -60,15 +60,16 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
+  gem 'autotest-rails'
 end
 
 group :test do
   gem 'factory_girl_rails'
   gem 'rspec'
+  gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'guard-cucumber'
   gem 'capybara'
-  gem 'spork', '~> 1.0rc'
 end
