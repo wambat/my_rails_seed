@@ -1,6 +1,6 @@
 class Admin::SpaceController < ApplicationController
   #force_ssl if Rails.env.production?
-  layout "application"
+  layout "admin"
   before_filter :authenticate_admin!
   before_filter :load_references
 
