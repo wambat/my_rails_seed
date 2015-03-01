@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 		}
 	end
 	namespace :admin do
-		resources :users
-		root to: 'users#index'
+		#resources :users
+		root to: 'space#index'
 	end
 
 	devise_for :users,

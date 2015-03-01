@@ -20,7 +20,7 @@
   %body
     %nav.ui.menu
       %h3.header.item My shiny project's dashboard
-      = link_to t('admin.users'), admin_tasks_path, class: "item #{"active" if controller_name=="tasks"}"
+      = link_to t('admin.users'), "Users", class: "item #{"active" if controller_name=="users"}"
       - unless current_user
         %a.item.right{href: admin_root_path} Login
       - else

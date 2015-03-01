@@ -3,6 +3,10 @@ class Admin::SpaceController < ApplicationController
   layout "application"
   before_filter :authenticate_admin!
   before_filter :load_references
+
+  def index
+
+  end
 private
   def load_references
     params.each do |key, value|
